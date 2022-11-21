@@ -6,20 +6,27 @@
 		#square{
 			width:400px;
 			height:400px;
-			background-image:url(https://www.icegif.com/wp-content/uploads/happy-dance-icegif-10.gif);
+			background-image:url();
 			background-size:contain;
 			background-repeat: no-repeat;
+
+		}
+
+		#clicker{
+			font-size:50px;
+			
+
 		}
 	</style>
 
 
 </head>
 <body>
+	<div id= "clicker">Hi Maddie, Happy Birthday! Here's a gift:<br><br> CLICK HERE!</div>
 	<center><div id="square"></div></center>
-	<audio id="song" src="">
-</audio>
 
-<audio src="" id="song"></audio>
+
+<audio src="song.mp3" id="song"> </audio>
 
 <script type="text/javascript">
 let counter = 0
@@ -30,6 +37,7 @@ let counter = 0
 
 			if (counter%2 == 1){
 				document.body.style.backgroundImage ="url(https://images.fineartamerica.com/images-medium-large-5/happy-birthday-white-sharon-turner.jpg)" ;
+
 		}
 			if (counter %2 == 0){
 				document.body.style.backgroundImage= "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdCSsn0NNeEknMY_EOBwFmpFoSVoSL27fCww&usqp=CAU)"
@@ -38,6 +46,24 @@ let counter = 0
 		
 	})
 
+clicker.addEventListener("click", function(){
+	square.style.backgroundImage="url(https://www.yayomg.com/wp-content/uploads/2015/04/yayomg-gru-dance-gif.gif)"
+	clicker.style.opacity=0+"%"
+})
+square.addEventListener("click", 
+	function(){
+
+		if (counter%2 == 1){
+			song.play()
+				
+		} if (counter %2 == 0){
+			song.pause()
+			
+		}
+
+
+
+	})
 
 
 </script>
