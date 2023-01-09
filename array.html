@@ -14,38 +14,55 @@
 	p{
 		font-size:50px;
 	}
-
+	#text{
+		width:500px;
+		height:500px;
+		border:1px solid black;
+		background-size:cover;
+		background-repeat: no-repeat;
+	}
 	</style>
 </head>
 <body>
 
 	<center>
-		welcome! choose your breakfast!</p>
+		Choose your dinner</p>
 		<div id="text"></div>
 	</center>
 
 	<script type="text/javascript">
+	let counter = 0
+
+	
 		
-		var breakfast = ["waffles", "eggs benedict", "eggs florintine", "pancakes", "yogurt", "french toast", "breakfast sandwich", "bagel", "bacon", "omlete"];
+		var breakfast = ["pasta", "indian", "tacos", "chinese", "pizza", "burritos", "chickenparm", "meatloaf","sandwiches"];
+
+		
+
+		function scrollImages (){
+			var number = Math.floor(Math.random()*8)
+			console.log(number)
+			text.style.backgroundImage="url("+breakfast[number]+".png)"
+
+		}
+
+var play;
 
 		document.addEventListener("click", function(){
 
-			var number = Math.round(Math.random()*9)
-			console.log(number)
-			text.innerText = breakfast[number];
-			// text.backgroundImage="url("+")"
+					counter = counter+1
 
+					if (counter %2 == 1){
+					 play = setInterval(scrollImages, 200)
+
+					}
+
+					else if (counter %2 == 0)
+					{clearInterval(play)};
 
 		})
 
-		function scrollText (){
-			var number = Math.round(Math.random()*9)
 
-			text.innerText =
-			breakfast[number];
-		}
-
-		setInterval(scrollText, 200)
 
 	</script>
 
