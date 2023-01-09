@@ -47,6 +47,11 @@ I was able to add the music how I wanted for the codesketch and it's still not t
 </h1>
 With the array project, I wasn't able to figure out how to do the things I wanted. I understand how you write a list and it randomly generates it, but I was trying to use images and the urls wouldn't work. With quotes it would just write out the url, and with out quotes it wouldn't register it because with the two slashes (/), it would hide the text. I also want to be able to click it and stop the generator, so you would choose a random one but I also wasn't able to figure that out. Again, I'm hoping I can figure it out in class because my array is not fully how I want it to be.
 
+<h1>
+	Journal Entry #7
+</h1>
+After making a lab to edit my array, we customized it to how I wanted it. To add photos instead of words for the array, I had to put images in my katejd.github folder and label it with png. I was then able to write the names in quotes so the images show up, like to make tacos.png show up I wrote "tacos". When it randomizes the images, you need a function with counter and have counter equal 0, this will mean the images will start at the first image at 0, and then in the event listener you add counter = counter +1, so the numbers go up 1 everytime and the images will show up in a random order. I wanted to make it start and stop when you press it, so it lands on a random image. Under the eventlistener I added, if(counter %2 ==1){play = setInterval(scrollImages, 200). This means that any number divided(%) by 2 has an odd remainder, like 1, every click that's odd will play the function. So when starting at 0 and doing your first click, when you click it'll play the function. I then had to add, else if (counter %2 == 0){clearInterval(play)};. This means that even numbered clicks like 0, will pause the function. So when you click for the 2nd, 4th, 6th, etc time, it'll pause the function and it'll land on a randomized image. Going to the lab helped and I was able to customize my project as I wanted to.
+
 
 </body>
 </html>
