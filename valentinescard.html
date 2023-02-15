@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+<style type="text/css">
+	body{background-image: url(https://media-api.xogrp.com/images/3b4a6f92-60ef-470d-abe9-6da2c6248432)}
+	#card{
+		width: 500px;
+		height: 500px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		position:relative;
+		top:250px;
+
+
+	background-image: url(https://bestanimations.com/uploads/gifs/373846046large-beating-heart-gif-animation3.gif);
+}
+
+.hearto{
+	width:100px;
+	height:100px;
+	background-image: url(heart.png);
+	background-size: contain;
+	background-repeat:no-repeat;
+	display:inline-block;
+	position:absolute;
+
+}	
+</style>
+
+</head>
+<body>
+<h1>
+	Happy Valentines Day!! Click the heart to see more!
+</h1>
+
+<center>
+<a href="valentines.html">
+<div id="card"></div>
+</a>
+</center>
+
+</body>
+
+<script type="text/javascript">
+document.addEventListener("mousemove",
+	
+
+function makeHearts (event){
+	var hearts = document.createElement("div");
+	document.body.appendChild(hearts);
+	hearts.classList.add('hearto');
+	hearts.style.left =event.clientX+"px";
+	hearts.style.top =event.clientY+"px";
+
+	function removeClass (){
+		hearts.classList.remove('hearto')
+
+	}
+
+	setTimeout(removeClass, 200)
+
+}
+)
+
+
+
+</script>
+
+
+
+</html>

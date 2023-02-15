@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<style type="text/css">
+	
+	.kangaroos{
+			color:white;
+		width:100px;
+		height:100px;
+		background-image:url(https://images.squarespace-cdn.com/content/v1/549367d9e4b0b0a3e2543543/1579885243320-XSLCLCDJACKF409DCIRS/NYC+Bagels.jpg?format=1000w);
+
+		background-size:contain;
+		display:inline-block;
+	}
+
+</style>
+
+</head>
+<body>
+
+
+<script type="text/javascript">
+	function makeKangaroos(placeholder){
+
+	
+	var kangaroo = document.createElement('div');	
+		
+
+		document.body.appendChild(kangaroo)
+		kangaroo.classList.add("kangaroos");
+		kangaroo.innerText =placeholder;
+
+	}
+
+	for (var i=0; i<100; i=i+1)
+	{makeKangaroos(i)}
+
+
+
+</script>
+
+
+</body>
+</html>
