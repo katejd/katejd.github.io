@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+<style type="text/css">
+	body{background-image: url(https://t3.ftcdn.net/jpg/05/26/30/42/360_F_526304237_fyJTnrJ8ft1fEmoB3mkgQZqgPX3FuMQw.jpg);
+		background-repeat: no-repeat;
+		background-size: cover ;
+		}
+	#buggy{
+		width: 300px;
+		height: 300px;
+		background-image: url(ladybug.png);
+		left: 10px;
+		position: absolute;
+		background-size: contain;
+		top: 500px;
+		position: relative
+	}
+
+</style>
+
+</head>
+<body>
+
+
+<div id="buggy"></div>
+
+
+<script type="text/javascript">
+	buggy.style.left = "0px"
+	
+	var x = parseInt(buggy.style.left);
+	
+	document.addEventListener("keydown", 
+		function(event){
+
+if (event.keyCode ==39){
+
+
+		console.log(x)
+		x = x+10;
+	buggy.style.left = x + "px";
+
+	}
+
+
+	if (event.keyCode ==37){
+
+
+		console.log(x)
+		x = x-10;
+	buggy.style.left = x + "px";
+
+	}
+
+		})
+
+</script>
+
+
+
+</body>
+</html>
