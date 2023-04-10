@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	
+</head>
+<body>
+
+	<button id="go">go!</button>
+
+The <input id="place"></input> was in...
+
+	<input id="answer"></input>
+
+	 <button id="submit">submit!</button>
+<br>
+<br>
+<br>
+<a href="triviapt3.html">New question</a>
+
+	<script type="text/javascript">
+
+	var number;
+	
+	var questionsPlaces = ["Start of WW1", "Russian revolution", "Start of WW2", "Pearl Harbour", "Indian Independence","Fall of Berlin Wall","Establishment of Maoist China"]
+
+	var answerPlaces = ["1914", "1917", "1939", "1941", "1947", "1989", "1949"]		
+
+go.addEventListener("click", function(){
+			number = Math.round(Math.random()*questionsPlaces.length)
+			place.value = questionsPlaces[number]
+			answer.value = ""
+			})
+
+submit.addEventListener("click", function(){
+			console.log(answer.value)
+			console.log(answerPlaces[number])
+
+			if(answer.value == answerPlaces[number]){
+				alert("correct")
+
+			}
+
+				else if(answer.value !== answerPlaces[number]){
+				alert("wrong!")
+			}
+
+		})
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
+
+<!--have an array of answers and array of questions
+	var answers
+	var questions
+	match up the same x variable for the question and correct answer. then add other answers that will be wrong -->

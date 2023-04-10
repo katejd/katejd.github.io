@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiple Circles Following Mouse and Shaking</title>
+	<style>
+		canvas {
+			display: block;
+			margin: 0 auto;
+			background-color: #f7f7f7;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas"></canvas>
+
+	<script>
+		// Get the canvas and its context
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+		// Set the canvas width and height
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+
+		// Create an array to store the circles
+		var circles = [];
+
+		// Create the Circle class
+		function Circle(x, y, radius) {
+			this.x = x;
+			this.y = y;
+			this.radius = radius;
+			this.color = getRandomColor();
+			this.speed = 5;
+
+			// Draw the circle
+			this.draw = function() {
+				ctx.beginPath();
+				ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+				ctx.fillStyle = this.color;
+				ctx.fill();
+				ctx.closePath();
+			}
+
+			// Update the circle's position and color based on the mouse
+			this.update = function() {
+				// Get the distance from the circle to the mouse
+				var dx = this.x - mouseX;
+				var dy = this.y - mouseY;
+				var distance = Math.sqrt(dx * dx + dy * dy);
+
+				// If the distance is less than the radius of the circle,
+				// change its color and speed
+				if (distance < this.radius) {
+					this.color = getRandomColor();
+					this.speed = Math.random() * 10 + 1;
+				}
+
+				// Move the circle towards the mouse in a line
+				if (this.x < mouseX) {
+					this.x += this.speed;
+				} else {
+					this.x -= this.speed;
+				}
+				if (this.y < mouseY) {
+					this.y += this.speed;
+				} else {
+					this.y -= this.speed;
+				}
+
+				// Shake the circle
+				this.x += Math.random() * 10 - 5;
+				this.y += Math.random() * 10 - 5;
+
+				// Draw the circle
+				this.draw();
+			}
+		}
+
+		// Generate a random color
+		function getRandomColor() {
+			var letters = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++) {
+				color += letters[Math.floor(Math.random() * 16)];
+			}
+			return color;
+		}
+
+		// Initialize the circles array with random values
+		for (var i = 0; i < 50; i++) {
+			var x = Math.random() * canvas.width;
+			var y = Math.random() * canvas.height;
+			var radius = Math.random() * 50 + 10;
+			circles.push(new Circle(x, y, radius));
+		}
+
+		// Add an event listener to track the mouse position
+		var mouseX, mouseY;
+		canvas.addEventListener("mousemove", function(event) {
+			mouseX = event.clientX;
+			mouseY = event.clientY;
+		});
+
+		// Animate the circles
+		function animate() {
+			requestAnimationFrame(animate);
+			ctx.clearRect(0, 0,

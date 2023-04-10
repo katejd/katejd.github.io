@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+
+
+
+	<!-- this creates a button called go -->
+<button id="go">go!</button>
+
+
+
+<!-- an input tag has text in it that has a value -->
+	The capital of <input id="place"></input> is...
+
+	<input id="answer"></input>
+
+	 <button id="submit">submit!</button>
+
+<br>
+<br>
+<br>
+<a href="triviagame.html">New question</a>
+
+
+
+	<script type="text/javascript">
+
+		var number;
+// what is generated according to the input tag
+		var questionsPlaces = ["Germany", "Belgium", "New York State", "Afghanistan", "Pakistan"]
+
+		var answerPlaces = ["Berlin", "Brussuls", "Albany", "Kabul", "Islamabad"]
+
+// what randomizes the words when you click
+		go.addEventListener("click", function(){
+			number = Math.round(Math.random()*questionsPlaces.length)
+			place.value = questionsPlaces[number]
+			answer.value = ""
+
+			
+
+		})
+
+		// new.addEventListener("click",function(){
+
+
+		// })
+
+		submit.addEventListener("click", function(){
+			console.log(answer.value)
+			console.log(answerPlaces[number])
+// when the correct answer is put that correlates with the same number as the question is, it'll say right or wrong
+			if(answer.value == answerPlaces[number]){
+				alert("correct")
+
+			}
+
+				else if(answer.value !== answerPlaces[number]){
+				alert("wrong!")
+			}
+
+		})
+	</script>
+
+</body>
+</html>
