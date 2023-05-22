@@ -6,46 +6,94 @@
 	<title></title>
 
 	
+
+	<style type="text/css">
+
+		h1{ 
+			font-size: 85px;
+		}
+		h2{
+			font-size: 20px;
+		}
+		
+		#question{
+			width:950px;
+			height:150px;
+			background-color:lightblue;
+			text-align:center;
+			font-size:20px;
+		}
+
+		#button1{
+			font-size:60px;
+		}
+
+		#answer{
+			width:400px;
+			height:80px;
+			font-size: 25px;
+		}
+	</style>
 </head>
 <body>
+<h1>
+	Try this trivia Game!!
+</h1>
+<h2>
+	Click the button to generate a new question!
+	<br>
+	*Capital letters matter and every answer starts with a capital letter
+</h2>
 
-	<button id="go">go!</button>
+<br>
+<center><button id="button1">new question!</button>
 
-The <input id="place"></input> was in...
+	<br>
+	<br>
+
+<input id="question"></input> 
+
+<br><br>
 
 	<input id="answer"></input>
 
 	 <button id="submit">submit!</button>
+
+	 </center>
 <br>
 <br>
 <br>
-<a href="triviapt3.html">New question</a>
+<!-- <a href="triviapt3.html">New question</a> -->
 
 	<script type="text/javascript">
 
 	var number;
 	
-	var questionsPlaces = ["Start of WW1", "Russian revolution", "Start of WW2", "Pearl Harbour", "Indian Independence","Fall of Berlin Wall","Establishment of Maoist China"]
+	var questionArray = ["What is the capital city of Paraguay?", "When was the Russian revolution?", "Which architect designed the Woolworth Building in New York City?", "Hamilton Kindley Field international airport is in which country?", "In which country is the Troi-Rivieres bridge?","When was the fall of Berlin Wall?","When was the establishment of Maoist China", "Who was murdered along with OJ Simpson’s estranged wife Nicole?", "The ‘girl in the polka dot dress’ was an eye witness in whose assassination?", "A “crepuscular” animal becomes active at what time?", "Who was the only British Pope ever?", "What geothermal Icelandic site has the same name as a 1980 movie?", "Among land animals, what species has the largest eyes?", "What comedy became the first film directed by a woman to gross over $100 million at the box office?", "So far, which continent has hosted the Olympics the most times?", "Napoleon suffered defeat at Waterloo in what year?", "What are the two stone lions’ names in front of the New York Public Library?", "On the periodic table, which element has an atomic weight of 1.00794?", "The highest denomination bill ever printed in the United States was $100,000. Who was on the bill?", "Sinhala and Tamil are the official languages of which island nation?", "In 1952, the United States Air Force created Project Blue Book to study what?", "In 1917, Finland declared its independence from which country?", "Appearing on the show in 1982, who was the youngest person ever to host Saturday Night Live?", "Which two countries are connected by the Karakoram Pass?", "What is the only country that displays the Bible on its national flag?", "What igneous rock has a density less than water?", "Which U.S. state has the motto “Live Free or Die” on their license plate?", "In the game of pool, what is the standard color for the one ball?", "Saskatchewan is a province of which country?", "What is the longest river in Australia?" ]
 
-	var answerPlaces = ["1914", "1917", "1939", "1941", "1947", "1989", "1949"]		
+	console.log(questionArray.length)
 
-go.addEventListener("click", function(){
-			number = Math.round(Math.random()*questionsPlaces.length)
-			place.value = questionsPlaces[number]
+	var answerArray = ["Asuncion", "1917", "Gilbert Cass", "Bermuda", "Canada", "1989", "1949", "Ronald Goldman", "Robert F. Kennedy", "Dusk", "Pope Adrian IV", "The Blue Lagoon", "Ostrich", "Big", "Europe", "1815", "Patience and Fortitude", "Hydrogen", "President Woodrow Wilson", "Sri Lanka", "UFOs", "Russia", "Drew Barrymore", "China and India", "The Dominican Republic", "Pumice", "New Hampshire", "Yellow", "Canada", "The Murray River" ]		
+
+	console.log(answerArray.length)
+
+button1.addEventListener("click", function(){
+			number = Math.floor(Math.random()*questionArray.length)
+			question.value = questionArray[number]
 			answer.value = ""
 			})
 
 submit.addEventListener("click", function(){
 			console.log(answer.value)
-			console.log(answerPlaces[number])
+			console.log(answerArray[number])
 
-			if(answer.value == answerPlaces[number]){
-				alert("correct")
+			if(answer.value == answerArray[number]){
+				alert("Correct!")
 
 			}
 
-				else if(answer.value !== answerPlaces[number]){
-				alert("wrong!")
+				else if(answer.value !== answerArray[number]){
+				alert("Wrong! The answer is: "+ answerArray[number])
 			}
 
 		})
